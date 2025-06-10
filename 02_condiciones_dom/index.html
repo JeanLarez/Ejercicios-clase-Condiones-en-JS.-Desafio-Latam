@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condiciones y el DOM</title>
+  </head>
+  <body>
+    <!--Creamos un input donde el usuario debe ingresar una contraseña. Si escribe "password-secreto" y presiona el botón, se muestra un mensaje.-->
+
+    <!-- Parrafo donde se mostrará el resultado -->
+    <p id="secret-result"></p>
+
+    <!-- Input para ingresar la contraseña -->
+    <input type="text" id="input" />
+
+    <!-- Botón que verifica la contraseña ingresada -->
+    <button
+      onclick="
+    // Obtenemos el valor del input
+    value = document.querySelector('#input').value;
+
+    // Verificamos si el valor es igual a 'password-secreto'
+    if(value == 'password-secreto'){
+      // Si es correcto, mostramos el mensaje
+      par = document.querySelector('#secret-result');
+      par.innerHTML = 'Lo lograste';
+    }
+  "
+    >
+      Verificar
+    </button>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clasificar tamaño de pantalla</title>
+  </head>
+  <body>
+    <!--El usuario debe ingresar el ancho de pantalla (viewport). Dependiendo del valor, se clasifica como XS, SM, MD o XL.-->
+
+    <h1>Clasificador de Tamaño de Pantalla</h1>
+    <p>Introduce el ancho del viewport en píxeles:</p>
+
+    <input type="number" id="input" placeholder="Por ejemplo: 720" />
+
+    <button
+      onclick="
+    // Obtenemos el valor ingresado por el usuario
+    valor = Number(document.querySelector('#input').value);
+
+    // Seleccionamos el elemento donde se mostrará el resultado
+    resultado = document.querySelector('#resultado');
+
+    // Inicializamos el mensaje
+    mensaje = '';
+
+    // Usamos condiciones para determinar el tamaño de pantalla
+    if (valor < 576) {
+      mensaje = 'Pantalla XS (extra pequeña)';
+    } else if (valor >= 576 && valor < 768) {
+      mensaje = 'Pantalla SM (pequeña)';
+    } else if (valor >= 768 && valor < 992) {
+      mensaje = 'Pantalla MD (mediana)';
+    } else {
+      mensaje = 'Pantalla XL (grande)';
+    }
+
+    // Mostramos el resultado en pantalla
+    resultado.innerHTML = mensaje;
+  "
+    >
+      Clasificar
+    </button>
+
+    <p id="resultado"></p>
+  </body>
+</html>

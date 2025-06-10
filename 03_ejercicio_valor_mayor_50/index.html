@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condiciones y el DOM</title>
+  </head>
+  <body>
+    <!--El usuario debe ingresar un número. Si ese número es mayor a 50, se muestra un mensaje.-->
+
+    <p id="resultado"></p>
+
+    <!-- Input donde el usuario escribe un número -->
+    <input type="number" id="input" placeholder="Ingresa un número" />
+
+    <!-- Botón que activa la verificación -->
+    <button
+      onclick="
+    // Obtenemos el valor del input y lo convertimos a número
+    valor = Number(document.querySelector('#input').value);
+
+    // Seleccionamos el párrafo donde se mostrará el resultado
+    parrafo = document.querySelector('#resultado');
+
+    // Verificamos si el valor es mayor a 50
+    if (valor > 50) {
+      // Mostramos el mensaje si se cumple la condición
+      parrafo.innerHTML = 'Superaste la cantidad';
+    }
+  "
+    >
+      Verificar
+    </button>
+
+    <script src="index.js"></script>
+  </body>
+</html>

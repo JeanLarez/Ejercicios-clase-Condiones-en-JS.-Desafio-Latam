@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condiciones y el DOM</title>
+  </head>
+  <body>
+    <!--Este ejercicio muestra un mensaje distinto si la contraseña es incorrecta.-->
+
+    <p id="secret-result"></p>
+    <input type="text" id="input" />
+
+    <button
+      onclick="
+    // Obtenemos el valor del input
+    value = document.querySelector('#input').value;
+
+    // Seleccionamos el párrafo donde se mostrará el mensaje
+    par = document.querySelector('#secret-result');
+
+    // Verificamos si el valor ingresado es el correcto
+    if(value == 'password-secreto'){
+      par.innerHTML = 'Lo lograste'; // Si es correcto
+    } else {
+      par.innerHTML = 'Error'; // Si es incorrecto
+    }
+  "
+    >
+      Verificar
+    </button>
+
+    <script src="index.js"></script>
+  </body>
+</html>
